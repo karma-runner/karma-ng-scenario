@@ -1,0 +1,36 @@
+{
+  "name": "testacular-ng-scenario",
+  "version": "0.0.1",
+  "description": "A Testacular plugin. Adapter for Angular's Scenario Runner.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/testacular/testacular-ng-scenario.git"
+  },
+  "keywords": [
+    "testacular-plugin",
+    "adapter",
+    "angular",
+    "e2e",
+    "scenario-runner"
+  ],
+  "author": "Vojta Jina <vojta.jina@gmail.com>",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0rc5",
+    "grunt-contrib-jshint": "~0.1.1rc5",
+    "testacular": "*",
+    "testacular-jasmine": "*",
+    "testacular-chrome-launcher": "*",
+    "testacular-firefox-launcher": "*",
+    "gruntacular": "~0.1.0"
+  },
+  "peerDependencies": {
+    "testacular": "~0.7"
+  },
+  "license": "MIT"
+}
