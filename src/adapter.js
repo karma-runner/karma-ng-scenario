@@ -49,7 +49,7 @@ var registerResultListeners = function(model, tc) {
   model.on('RunnerEnd', function() {
     var skippedTests = totalTests - testsCompleted;
 
-    // Inform Testacular about number of skipped tests
+    // Inform Karma about number of skipped tests
     // TODO(vojta): report proper suite/description (need to fix the scenario runner first)
     for (var i = 0; i < skippedTests; i++) {
       tc.result({
@@ -70,19 +70,19 @@ var registerResultListeners = function(model, tc) {
 
 /**
  *
- * @param {Object} tc Testacular!!
+ * @param {Object} tc Karma!!
  * @param {Function} scenarioSetupAndRun angular.scenario.setUpAndRun
  * @return {Function}
  */
 var createNgScenarioStartFn = function(tc, scenarioSetupAndRun) {
   /**
-   * Generates Testacular Output
+   * Generates Karma Output
    */
-  angular.scenario.output('testacular', function(context, runner, model) {
+  angular.scenario.output('karma', function(context, runner, model) {
     registerResultListeners(model, tc);
   });
 
   return function(config) {
-    scenarioSetupAndRun({scenario_output: 'testacular,html'});
+    scenarioSetupAndRun({scenario_output: 'karma,html'});
   };
 };

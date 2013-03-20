@@ -4,7 +4,7 @@
  */
 
 describe('adapter angular-scenario', function() {
-  var Testacular = window.__testacular__.constructor;
+  var Karma = window.__karma__.constructor;
 
   describe('Test Results Reporter', function() {
     var tc, model, passingSpec, failingSpec;
@@ -24,7 +24,7 @@ describe('adapter angular-scenario', function() {
       failedStep = new angular.scenario.ObjectModel.Step('failing step');
       failedStep.status = 'failure';
       failingSpec.steps.push(failedStep);
-      tc = new Testacular(new MockSocket(), {});
+      tc = new Karma(new MockSocket(), {});
 
       registerResultListeners(model, tc);
     });
