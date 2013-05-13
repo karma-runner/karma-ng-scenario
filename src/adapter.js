@@ -63,9 +63,7 @@ var registerResultListeners = function(model, tc) {
       });
     }
 
-    tc.complete({
-      coverage: window.document.getElementsByTagName('iframe')[0].contentWindow.__coverage__
-    });
+    tc.complete();
   });
 };
 
