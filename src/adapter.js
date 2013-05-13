@@ -1,5 +1,6 @@
 var registerResultListeners = function(model, tc) {
   var totalTests = 0, testsCompleted = 0;
+  var coverages = [];
 
   var createFailedSpecLog = function(spec) {
     var failedStep = findFailedStep(spec.steps);
@@ -43,6 +44,7 @@ var registerResultListeners = function(model, tc) {
     }
 
     testsCompleted++;
+    coverages.push(window.document.getElementsByTagName('iframe')[0].contentWindow.__coverage__);
     tc.result(result);
   });
 
@@ -63,7 +65,7 @@ var registerResultListeners = function(model, tc) {
     }
 
     tc.complete({
-      coverage: window.__coverage__
+      coverage: coverages
     });
   });
 };
