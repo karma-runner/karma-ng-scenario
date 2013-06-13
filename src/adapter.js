@@ -35,7 +35,8 @@ var registerResultListeners = function(model, tc) {
       success: spec.status === 'success',
       skipped: false,
       time: spec.duration,
-      log: []
+      log: [],
+      coverage: window.document.getElementsByTagName('iframe')[0].contentWindow.__coverage__
     };
 
     if (spec.error) {
@@ -62,9 +63,7 @@ var registerResultListeners = function(model, tc) {
       });
     }
 
-    tc.complete({
-      coverage: window.__coverage__
-    });
+    tc.complete();
   });
 };
 
