@@ -44,18 +44,28 @@ module.exports = (grunt) ->
         singleRun: true
         reporters: ['dots']
 
+    'npm-publish':
+      options:
+        requires: ['build']
+        abortIfDirty: true
+
+    bump:
+      options:
+        commitMessage: 'chore: release v%VERSION%'
+        pushTo: 'upstream'
+
   grunt.loadTasks 'tasks'
-  # grunt.loadTasks '../karma/tasks'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-karma'
+  grunt.loadNpmTasks 'grunt-npm'
+  grunt.loadNpmTasks 'grunt-bump'
 
   grunt.registerTask 'default', ['build', 'jshint', 'test']
   grunt.registerTask 'test', ['karma']
 
-  # TODO(vojta): release task
-  # grunt.registerTask 'release', 'Build, bump and publish to NPM.', (type) ->
-  #   grunt.task.run [
-  #     'build',
-  #     "bump:#{type||'patch'}",
-  #     'npm-publish'
-  #   ]
+  grunt.registerTask 'release', 'Build, bump and publish to NPM.', (type) ->
+    grunt.task.run [
+      'build',
+      "bump:#{type||'patch'}",
+      'npm-publish'
+    ]
