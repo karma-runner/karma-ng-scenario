@@ -27,6 +27,8 @@ var registerResultListeners = function(model, tc) {
   });
 
   model.on('SpecEnd', function(spec) {
+    var iframe = window.document.getElementsByTagName('iframe')[0];
+
     // TODO(vojta): create Result type
     var result = {
       id: spec.id,
@@ -36,7 +38,7 @@ var registerResultListeners = function(model, tc) {
       skipped: false,
       time: spec.duration,
       log: [],
-      coverage: window.document.getElementsByTagName('iframe')[0].contentWindow.__coverage__
+      coverage: iframe && iframe.contentWindow.__coverage__
     };
 
     if (spec.error) {
