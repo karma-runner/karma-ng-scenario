@@ -59,6 +59,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-npm'
   grunt.loadNpmTasks 'grunt-bump'
+  grunt.loadNpmTasks 'grunt-auto-release'
 
   grunt.registerTask 'default', ['build', 'jshint', 'test']
   grunt.registerTask 'test', ['karma']
