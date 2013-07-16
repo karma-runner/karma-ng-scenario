@@ -12,7 +12,7 @@
   },
   "keywords": [
     "karma-plugin",
-    "adapter",
+    "karma-adapter",
     "angular",
     "e2e",
     "scenario-runner"
