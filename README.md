@@ -1,4 +1,4 @@
-# karma-ng-scenario [![Build Status](https://travis-ci.org/karma-runner/karma-ng-scenario.png?branch=master)](https://travis-ci.org/karma-runner/karma-ng-scenario)
+# karma-ng-scenario [![Build Status](https://travis-ci.org/karma-runner/karma-ng-scenario.svg?branch=master)](https://travis-ci.org/karma-runner/karma-ng-scenario)
 
 > Adapter for the AngularJS Scenario Runner.
 
