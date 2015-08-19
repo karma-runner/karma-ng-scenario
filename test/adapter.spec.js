@@ -125,5 +125,21 @@ describe('adapter angular-scenario', function() {
       model.emit('SpecEnd', failingSpec);
       expect(tc.result).toHaveBeenCalled();
     });
+
+    it('should report progress before every step', function() {
+      spyOn(tc, 'info');
+
+      model.emit('StepBegin', passingSpec);
+
+      expect(tc.info).toHaveBeenCalled();
+    });
+
+    it('should report progress after every step', function() {
+      spyOn(tc, 'info');
+
+      model.emit('StepEnd', passingSpec);
+
+      expect(tc.info).toHaveBeenCalled();
+    });
   });
 });
