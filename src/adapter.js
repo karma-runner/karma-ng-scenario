@@ -26,6 +26,14 @@ var registerResultListeners = function(model, tc) {
     tc.info({total: totalTests});
   });
 
+  model.on('StepBegin', function(spec) {
+    tc.info({});
+  });
+
+  model.on('StepEnd', function(spec) {
+    tc.info({});
+  });
+
   model.on('SpecEnd', function(spec) {
     var iframe = window.document.getElementsByTagName('iframe')[0];
 
