@@ -21,7 +21,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6",
+    "grunt-contrib-jshint": "~1.1.0",
     "karma": "1.x || ~0.12",
     "karma-jasmine": "1.x || *",
     "karma-chrome-launcher": "1.x || *",
