@@ -24,7 +24,7 @@
     "grunt-contrib-jshint": "~0.6",
     "karma": "1.x || ~0.12",
     "karma-jasmine": "1.x || *",
-    "karma-chrome-launcher": "1.x || *",
+    "karma-chrome-launcher": "2.1.1",
     "karma-firefox-launcher": "1.x || *",
     "grunt-karma": "1.x || ~0.4",
     "grunt-bump": "~0.0.11",
